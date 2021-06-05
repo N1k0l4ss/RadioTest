@@ -29,7 +29,6 @@ public class NewPart {
     @FXML private TextField talentNameField;
     private MainWindowController mainWindowController;
 
-
     public void cancelClicked() {
         closeStage();
     }
@@ -55,7 +54,6 @@ public class NewPart {
         }
 
         if (mainWindowController.getBroadcasts().get(focusedIndex).isSuccessfullyAdded(mainWindowController)) {
-            mainWindowController.getBroadcasts().get(focusedIndex).calcProfit();
             closeStage();
         }
     }
