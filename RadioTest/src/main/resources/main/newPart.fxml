@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="392.0" prefWidth="912.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.NewPart">
+   <children>
+      <TextArea fx:id="infoArea" layoutX="14.0" layoutY="14.0" prefHeight="136.0" prefWidth="344.0" promptText="Info">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextArea>
+      <TextField fx:id="lengthField" layoutX="377.0" layoutY="14.0" promptText="Length (seconds)" AnchorPane.leftAnchor="377.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <VBox layoutX="377.0" layoutY="50.0" prefHeight="100.0" prefWidth="175.0">
+         <children>
+            <RadioButton fx:id="radioMusic" mnemonicParsing="false" onAction="#checkRadioBtns" text="Music">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <toggleGroup>
+                  <ToggleGroup fx:id="type" />
+               </toggleGroup>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+            </RadioButton>
+            <RadioButton fx:id="radioAd" mnemonicParsing="false" onAction="#checkRadioBtns" text="Advertisement" toggleGroup="$type">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+            </RadioButton>
+            <RadioButton fx:id="radioInt" mnemonicParsing="false" onAction="#checkRadioBtns" text="Interview" toggleGroup="$type">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+            </RadioButton>
+            <RadioButton fx:id="radioOther" mnemonicParsing="false" onAction="#checkRadioBtns" text="Other paid content" toggleGroup="$type">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </RadioButton>
+         </children>
+      </VBox>
+      <TextField fx:id="contentField" layoutX="552.0" layoutY="125.0" promptText="Content type" />
+      <TextField fx:id="priceField" layoutX="720.0" layoutY="125.0" promptText="Price of a second" />
+      <TextArea fx:id="talentInfoArea" layoutX="14.0" layoutY="196.0" prefHeight="136.0" prefWidth="881.0" promptText="On-air talent info">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextArea>
+      <TextField fx:id="talentNameField" layoutX="14.0" layoutY="160.0" prefHeight="25.0" prefWidth="183.0" promptText="On-air talent name" />
+      <Button layoutX="14.0" layoutY="353.0" mnemonicParsing="false" onMouseClicked="#cancelClicked" text="Cancel" />
+      <Button layoutX="865.0" layoutY="353.0" mnemonicParsing="false" onMouseClicked="#okClicked" text="OK" />
+   </children>
+</AnchorPane>
