@@ -103,7 +103,6 @@ public class MainWindowController {
 
     public void removeAPartClicked() {
         if (partsTable.getFocusModel().getFocusedItem() != null){
-            broadcasts.get(broadcastTable.getFocusModel().getFocusedIndex()).calcProfit();
             broadcasts.get(broadcastTable.getFocusModel().getFocusedIndex()).getParts().remove(partsTable.getFocusModel().getFocusedItem());
             refreshTables();
         } else
@@ -188,6 +187,9 @@ public class MainWindowController {
     }
 
     public void refreshTables() {
+        for (Broadcast broadcast : broadcasts) {
+            broadcast.calcProfit();
+        }
             broadcastTable.setItems(FXCollections.observableArrayList(broadcasts));
         if (!broadcasts.isEmpty()){
             partsTable.setItems(FXCollections.observableArrayList(broadcastTable.getFocusModel().getFocusedItem().getParts()));
