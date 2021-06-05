@@ -103,6 +103,7 @@ public class MainWindowController {
 
     public void removeAPartClicked() {
         if (partsTable.getFocusModel().getFocusedItem() != null){
+            broadcasts.get(broadcastTable.getFocusModel().getFocusedIndex()).calcProfit();
             broadcasts.get(broadcastTable.getFocusModel().getFocusedIndex()).getParts().remove(partsTable.getFocusModel().getFocusedItem());
             refreshTables();
         } else
